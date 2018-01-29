@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/beliakova.iml" filepath="$PROJECT_DIR$/.idea/modules/beliakova.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/beliakova_main.iml" filepath="$PROJECT_DIR$/.idea/modules/beliakova_main.iml" group="beliakova" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/beliakova_test.iml" filepath="$PROJECT_DIR$/.idea/modules/beliakova_test.iml" group="beliakova" />
+    </modules>
+  </component>
+</project>
