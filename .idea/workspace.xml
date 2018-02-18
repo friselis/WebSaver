@@ -2,43 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="88903e3e-5d14-425c-8801-639e246d2c9c" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Client/ClientGUI.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Server/AuthService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Server/DropboxServer.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Server/DropboxServerListener.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Server/DropboxSocketThread.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Server/SimpleAuthService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ServerGUI/ServerGUI.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/library/DefaultGUIExceptionHandler.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/library/Messages.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/network/ServerSocketThread.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/network/ServerSocketThreadListener.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/network/SocketThread.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/network/SocketThreadListener.java" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/WebSaver/.gradle/4.0/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/WebSaver/.gradle/4.0/fileHashes/fileHashes.bin" />
-      <change beforePath="$PROJECT_DIR$/WebSaver/.gradle/4.0/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/WebSaver/.gradle/4.0/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/WebSaver/.idea/workspace.xml" afterPath="$PROJECT_DIR$/WebSaver/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Client/ListOfFiles.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Client/LoginWindow$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Client/LoginWindow.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Client/PanelHandler.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Server/Router.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Server/Runner.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Server/Server$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Server/Server$RouterHandler.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Server/Server.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/ListOfFiles.form" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/ListOfFiles.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/LoginWindow.form" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/LoginWindow.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/PanelHandler.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Router.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Runner.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Server.java" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -80,8 +44,8 @@
       <file leaf-file-name="ServerGUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ServerGUI/ServerGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+            <state relative-caret-position="150">
+              <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
               <folding>
                 <element signature="e#986#987#0" expanded="true" />
                 <element signature="e#1033#1034#0" expanded="true" />
@@ -951,6 +915,14 @@
       <option name="presentableId" value="Default" />
       <updated>1517177660933</updated>
     </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <created>1518984080654</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1518984080654</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -991,6 +963,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1370,8 +1346,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ServerGUI/ServerGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+        <state relative-caret-position="150">
+          <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
           <folding>
             <element signature="e#986#987#0" expanded="true" />
             <element signature="e#1033#1034#0" expanded="true" />
