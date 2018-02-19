@@ -11,6 +11,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**Server GUI**/
 public class ServerGUI extends JFrame implements ActionListener, DropboxServerListener {
 
     private static final int POS_X = 1100;

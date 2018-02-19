@@ -14,6 +14,7 @@ import java.net.Socket;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 
+/**Client GUI**/
 public class ClientGUI extends JFrame implements ActionListener, SocketThreadListener {
 
         public static void main(String[] args) {

@@ -1,5 +1,6 @@
 package library;
 
+/**Class Messages stores all messages available**/
 public class Messages {
 
     public static final String DELIMITER =          ";";

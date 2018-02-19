@@ -2,6 +2,7 @@ package library;
 
 import javax.swing.*;
 
+/**Handle GUI exceptions**/
 public class DefaultGUIExceptionHandler implements Thread.UncaughtExceptionHandler {
 
     @Override
@@ -10,7 +11,7 @@ public class DefaultGUIExceptionHandler implements Thread.UncaughtExceptionHandl
         StackTraceElement[] stackTraceElements = e.getStackTrace();
         String msg;
         if (stackTraceElements.length == 0) {
-            msg = "Пустой stackTraceElements";
+            msg = "Empty stackTraceElements";
         } else {
             msg = e.getClass().getCanonicalName() + ": " + e.getMessage() + "\n" + stackTraceElements[0];
         }
