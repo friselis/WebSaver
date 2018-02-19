@@ -1,10 +1,12 @@
 package ServerGUI;
 
+import Client.ClientGUI;
 import Server.DropboxServer;
 import Server.DropboxServerListener;
 import Server.DropboxSocketThread;
 import Server.SimpleAuthService;
 import library.DefaultGUIExceptionHandler;
+import org.apache.log4j.Logger;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,12 +16,14 @@ import java.awt.event.ActionListener;
 /**Server GUI**/
 public class ServerGUI extends JFrame implements ActionListener, DropboxServerListener {
 
+    private static Logger serverGuiLog = Logger.getLogger(ServerGUI.class);
+
     private static final int POS_X = 1100;
     private static final int POS_Y = 150;
     private static final int WIDTH = 800;
     private static final int HEIGHT = 400;
 
-    private static final String TITLE = "Chat Server";
+    private static final String TITLE = "Dropbox Server";
     private static final String START_LISTENING = "Start listening";
     private static final String DROP_ALL_CLIENTS = "Drop all clients";
     private static final String STOP_LISTENING = "Stop listening";
@@ -28,6 +32,7 @@ public class ServerGUI extends JFrame implements ActionListener, DropboxServerLi
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
+                serverGuiLog.debug("Server GUI is starting.");
                 new ServerGUI();
             }
         });
@@ -67,12 +72,16 @@ public class ServerGUI extends JFrame implements ActionListener, DropboxServerLi
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
         if (src == btnStartListening) {
+            serverGuiLog.debug("dropboxServer start listening port + " + 8189 + ".");
             dropboxServer.startListening(8189);
         } else if (src == btnDropAllClients) {
+            serverGuiLog.debug("dropboxServer drops all clients.");
             dropboxServer.dropAllClients();
         } else if (src == btnStopListening) {
+            serverGuiLog.debug("dropboxServer stops listening.");
             dropboxServer.stopListening();
         } else {
+            serverGuiLog.debug("Unknown src = " + src);
             throw new RuntimeException("Unknown src = " + src);
         }
     }
@@ -82,6 +91,7 @@ public class ServerGUI extends JFrame implements ActionListener, DropboxServerLi
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
+                serverGuiLog.debug(msg + "\n");
                 log.append(msg + "\n");
                 log.setCaretPosition(log.getDocument().getLength());
             }

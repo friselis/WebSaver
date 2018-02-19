@@ -2,6 +2,7 @@ package network;
 
 import java.net.Socket;
 
+/** Interface socket thread listener. */
 public interface SocketThreadListener {
 
     void onStartSocketThread(SocketThread socketThread);

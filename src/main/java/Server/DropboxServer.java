@@ -11,6 +11,7 @@ import java.net.Socket;
 import java.text.SimpleDateFormat;
 import java.util.Vector;
 
+/** Dropbox server. */
 public class DropboxServer implements ServerSocketThreadListener, SocketThreadListener {
 
         private final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss: ");
@@ -26,7 +27,7 @@ public class DropboxServer implements ServerSocketThreadListener, SocketThreadLi
 
         public void startListening(int port) {
             if(serverSocketThread != null && serverSocketThread.isAlive()) {
-                putLog("Поток сервера уже запущен.");
+                putLog("Server thread already started.");
                 return;
             }
             serverSocketThread = new ServerSocketThread(this, "ServerSocketThread", port, 2000);
@@ -39,7 +40,7 @@ public class DropboxServer implements ServerSocketThreadListener, SocketThreadLi
 
         public void stopListening() {
             if(serverSocketThread == null || !serverSocketThread.isAlive()) {
-                putLog("Поток сервера не запущен.");
+                putLog("Server thread is not started.");
                 return;
             }
             serverSocketThread.interrupt();
@@ -98,7 +99,7 @@ public class DropboxServer implements ServerSocketThreadListener, SocketThreadLi
             DropboxSocketThread client = (DropboxSocketThread) socketThread;
             if(client.isAuthorized() && !client.isReconnected()) {
                 sendToAllAuthorizedClients(Messages.getBroadcast("Server", client.getNickname() + " disconnected."));
-                sendToAllAuthorizedClients(Messages.getUsersList(getAllNicknamesString()));
+                sendToAllAuthorizedClients(Messages.getFilesList(getAllNicknamesString()));
             }
         }
 
@@ -149,7 +150,7 @@ public class DropboxServer implements ServerSocketThreadListener, SocketThreadLi
             } else {
                 oldClient.reconnected();
             }
-            sendToAllAuthorizedClients(Messages.getUsersList(getAllNicknamesString()));
+            sendToAllAuthorizedClients(Messages.getFilesList(getAllNicknamesString()));
         }
 
         private DropboxSocketThread getClientByNickname(String nickname) {

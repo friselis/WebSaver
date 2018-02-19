@@ -1,13 +1,13 @@
 package library;
 
-/**Class Messages stores all messages available**/
+/** Class Messages stores all messages available. */
 public class Messages {
 
     public static final String DELIMITER =          ";";
     public static final String AUTH_REQUEST =       "/auth_request";
     public static final String AUTH_ACCEPT =        "/auth_accept";
     public static final String AUTH_ERROR =         "/auth_error";
-    public static final String USERS_LIST =         "/user_list";
+    public static final String FILES_LIST =         "/files_list";
     public static final String RECONNECT =          "/reconnect";
     public static final String BROADCAST =          "/bcast";
     public static final String MSG_FORMAT_ERROR =   "/msg_format_error";
@@ -27,9 +27,9 @@ public class Messages {
         return BROADCAST + DELIMITER + System.currentTimeMillis() + DELIMITER + src + DELIMITER + value;
     }
 
-    // /user_list time user1 user2 user3
-    public static String getUsersList(String users){
-        return USERS_LIST + DELIMITER + users;
+    // /file_list
+    public static String getFilesList(String files){
+        return FILES_LIST + DELIMITER + files;
     }
 
     // AUTH_ERROR time message

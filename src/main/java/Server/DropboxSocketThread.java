@@ -6,6 +6,7 @@ import network.SocketThreadListener;
 
 import java.net.Socket;
 
+/** Dropbox socket thread. */
 public class DropboxSocketThread extends SocketThread {
 
         private boolean isAuthorized;

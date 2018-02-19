@@ -2,7 +2,7 @@ package library;
 
 import javax.swing.*;
 
-/**Handle GUI exceptions**/
+/** Handle GUI exceptions. */
 public class DefaultGUIExceptionHandler implements Thread.UncaughtExceptionHandler {
 
     @Override

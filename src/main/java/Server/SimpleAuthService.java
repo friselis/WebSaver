@@ -2,7 +2,7 @@ package Server;
 
 import java.util.ArrayList;
 
-/**Authentification service**/
+/** Authentification service. */
 public class SimpleAuthService implements AuthService {
 
         private static class Entry {
