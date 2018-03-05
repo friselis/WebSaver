@@ -1,4 +1,4 @@
-package Server;
+package server;
 
 /** Interface of authentification service. */
 public interface AuthService {

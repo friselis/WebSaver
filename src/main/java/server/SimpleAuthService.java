@@ -1,6 +1,13 @@
-package Server;
+package server;
+
+import database.User;
+import database.UserRepository;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
 
 import java.util.ArrayList;
+import java.util.Optional;
+import java.util.Scanner;
 
 /** Authentification service. */
 public class SimpleAuthService implements AuthService {
@@ -34,7 +41,7 @@ public class SimpleAuthService implements AuthService {
             final int cnt = entries.size();
             for (int i = 0; i < cnt; i++) {
                 Entry entry = entries.get(i);
-                if(entry.isMe(login, password)) return entry.nickname;
+                if(entry.isMe(login, password)) return entry.login;
             }
             return null;
         }

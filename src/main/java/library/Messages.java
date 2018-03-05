@@ -11,6 +11,8 @@ public class Messages {
     public static final String RECONNECT =          "/reconnect";
     public static final String BROADCAST =          "/bcast";
     public static final String MSG_FORMAT_ERROR =   "/msg_format_error";
+    public static final String FILE_UPLOAD = "/file_upload";
+    public static final String SOCKET_OPENED = "/socket_opened";
 
     // /auth_request login password
     public static String getAuthRequest(String login, String password) {
@@ -44,6 +46,15 @@ public class Messages {
     // /msg_format_error time value
     public static String getMsgFormatError(String value){
         return MSG_FORMAT_ERROR + DELIMITER + value;
+    }
+
+    // /file_upload message
+    public static String getFileName(String fileName, String fullPath) {
+        return FILE_UPLOAD + DELIMITER + fileName + DELIMITER + fullPath;
+    }
+
+    public static String getSocketOpened(int port, String fileName) {
+        return String.format("%s%s%d%s%s", SOCKET_OPENED, DELIMITER, port, DELIMITER, fileName);
     }
 }
 

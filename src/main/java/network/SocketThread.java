@@ -19,6 +19,9 @@ public class SocketThread extends Thread {
         start();
     }
 
+    public String getIpAddress() {
+        return socket.getInetAddress().getHostAddress();
+    }
 
     @Override
     public void run() {

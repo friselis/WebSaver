@@ -1,4 +1,4 @@
-package Server;
+package server;
 
 import library.Messages;
 import network.SocketThread;

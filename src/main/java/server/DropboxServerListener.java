@@ -1,4 +1,4 @@
-package Server;
+package server;
 
 /** Interface Dropbox server listener. */
 public interface DropboxServerListener {

@@ -1,10 +1,19 @@
 package ServerGUI;
 
-import Client.ClientGUI;
-import Server.DropboxServer;
-import Server.DropboxServerListener;
-import Server.DropboxSocketThread;
-import Server.SimpleAuthService;
+import database.Directory;
+import database.DirectoryRepository;
+import database.User;
+import database.UserRepository;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import server.DropboxServer;
+import server.DropboxServerListener;
+import server.SimpleAuthService;
 import library.DefaultGUIExceptionHandler;
 import org.apache.log4j.Logger;
 
@@ -12,8 +21,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Optional;
+import java.util.Scanner;
 
-/**Server GUI**/
+import static com.sun.javafx.fxml.expression.Expression.add;
+
+/** Server GUI. **/
 public class ServerGUI extends JFrame implements ActionListener, DropboxServerListener {
 
     private static Logger serverGuiLog = Logger.getLogger(ServerGUI.class);
@@ -28,23 +41,26 @@ public class ServerGUI extends JFrame implements ActionListener, DropboxServerLi
     private static final String DROP_ALL_CLIENTS = "Drop all clients";
     private static final String STOP_LISTENING = "Stop listening";
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                serverGuiLog.debug("Server GUI is starting.");
-                new ServerGUI();
-            }
-        });
-    }
+//    public static void main(String[] args) {
+//        SwingUtilities.invokeLater(new Runnable() {
+//            @Override
+//            public void run() {
+//                serverGuiLog.debug("Server GUI is starting.");
+//                //new ServerGUI();
+//            }
+//        });
+//    }
 
-    private final DropboxServer dropboxServer = new DropboxServer(this, new SimpleAuthService());
+
+    private final DropboxServer dropboxServer;
     private final JButton btnStartListening = new JButton(START_LISTENING);
     private final JButton btnStopListening = new JButton(STOP_LISTENING);
     private final JButton btnDropAllClients = new JButton(DROP_ALL_CLIENTS);
     private final JTextArea log = new JTextArea();
+    private final DirectoryRepository directoryRepository;
+    private final UserRepository userRepository;
 
-    private ServerGUI() {
+    public ServerGUI(DirectoryRepository directoryRepository, UserRepository userRepository) {
         Thread.setDefaultUncaughtExceptionHandler(new DefaultGUIExceptionHandler());
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBounds(POS_X, POS_Y, WIDTH, HEIGHT);
@@ -66,6 +82,11 @@ public class ServerGUI extends JFrame implements ActionListener, DropboxServerLi
 
         setAlwaysOnTop(true);
         setVisible(true);
+
+        this.directoryRepository = directoryRepository;
+        this.userRepository = userRepository;
+        dropboxServer = new DropboxServer(this, new SimpleAuthService(),
+                directoryRepository, userRepository);
     }
 
     @Override
